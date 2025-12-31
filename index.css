@@ -1,0 +1,95 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #1F2937;
+    color: #D5D4D8;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0.875em 1.5em;
+}
+
+input[type=color] {
+    width: 70px;
+    height: 52px;
+    border: none;
+}
+
+select,
+::picker(select) {
+    appearance: base-select;
+}
+
+select {
+    width: 412px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 1em 0.875em;
+    background-color: inherit;
+    color: inherit;
+    font-size: 1em;
+    font-family: 'Inter', sans-serif;
+}
+
+::picker(select) {
+    border: none;
+}
+
+option {
+    padding: 0.5em 0.75em;
+    background-color: #1F2937;
+    color: #D1D5DB;
+}
+
+option:hover,
+option:focus {
+    font-weight: 600;
+}
+
+option:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+option::checkmark {
+    order: 1;
+    margin-left: auto;
+}
+
+/* option {
+    background: #1F2937;
+    padding: 10px 10px;
+}
+
+.custom-select-arrow {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
+} */
+
+button {
+    background-color: #3D4B60;
+    color: inherit;
+    border: none;
+    border-radius: 4px;
+    padding: 0 0.875em;
+    font-weight: 500;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.color {
+    background-color: #000000;
+    display: grid;
+    grid-template-rows: 1fr 60px;
+}
