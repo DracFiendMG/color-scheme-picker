@@ -1,15 +1,14 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div>
             <form id="color-picker">
-                <input type="color">
-                <select id="mode-selector" class="custom-select-arrow">
+                <input id="color-hex" type="color" name="color-hex" value="#F55A5A">
+                <select id="mode" class="custom-select-arrow" name="mode">
                     <button>
-                        <selectedcontent><i class="fa-solid fa-check"></i></selectedcontent>
+                        <selectedcontent></selectedcontent>
                     </button>
                     <option value="monochrome"><span>Monochrome</span></option>
                     <option value="monochrome-dark"><span>Monochrome-dark</span></option>

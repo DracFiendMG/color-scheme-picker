@@ -4,6 +4,9 @@ html, body {
     background-color: #1F2937;
     color: #D5D4D8;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 form {
@@ -11,6 +14,7 @@ form {
     justify-content: space-between;
     align-items: stretch;
     padding: 0.875em 1.5em;
+    margin-bottom: 0;
 }
 
 input[type=color] {
@@ -37,6 +41,8 @@ select {
 
 ::picker(select) {
     border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #000000;
 }
 
 option {
@@ -50,9 +56,12 @@ option:focus {
     font-weight: 600;
 }
 
-option:last-child {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+option:first-of-type {
+    border-radius: 6px 6px 0 0;
+}
+
+option:last-of-type {
+    border-radius: 0 0 6px 6px;
 }
 
 option::checkmark {
@@ -81,15 +90,37 @@ button {
     border-radius: 4px;
     padding: 0 0.875em;
     font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover,
+button:active {
+    background-color: #3D4560;
+}
+
+button:active {
+    scale: 0.95;
 }
 
 .colors {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
 
 .color {
     background-color: #000000;
-    display: grid;
-    grid-template-rows: 1fr 60px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.color-code {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #1F2937;
+    padding: 1em 0;
+    margin-bottom: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 }
