@@ -1,7 +1,19 @@
 const colorPicker = document.getElementById("color-picker")
 const hex = document.getElementById("color-hex")
 const mode = document.getElementById("mode")
+const notification = document.querySelector(".notify")
 let colors = []
+
+document.addEventListener("click", (e) => {
+    if (e.target.dataset.color) {
+        navigator.clipboard.writeText(e.target.dataset.color)
+        notification.style.opacity = '1'
+
+        setTimeout(() => {
+            notification.style.opacity = '0'
+        }, 1500)
+    }
+})
 
 colorPicker.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -29,7 +41,7 @@ function renderColors() {
     colors.forEach((color) => {
         colorHtml += `
             <div class="color" data-color=${color} style="background-color: ${color};">
-                <p class="color-code">${color}</p>
+                <p class="color-code" data-color=${color}>${color}</p>
             </div>
         `
     })
